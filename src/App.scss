@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Jost&display=swap');
+
+//@import "./variables.scss";
+// @import "./breakpoints.scss";
+// @import "./components/Nav.scss";
+// @import "./components/Homepage.scss";
+// @import "./components/About.scss";
+// @import "./components/Ozono.scss";
+// @import "./components/Pulizia.scss";
+// @import "./components/Contact.scss";
+// @import "./components/Footer.scss";
+
+// *,
+// *:before,
+// *:after {
+// 	margin: 0;
+// 	padding: 0;
+// 	box-sizing: border-box;
+// }
+
+// body {
+// 	user-select: none;
+// 	overscroll-behavior: none;
+// 	background-color: #fff;
+// 	letter-spacing: .9px;
+// 	font-family: 'Jost', sans-serif;
+// 	color: #000;
+// 	text-rendering: optimizeLegibility;
+// 	-webkit-font-smoothing: antialiased;
+// 	-moz-osx-font-smoothing: grayscale;
+// }
+h1,
+h2,
+p {
+	font-family: 'Jost', sans-serif;
+}
+p.node-sass {
+	text-shadow: 1px 1px 6px rgb(163, 163, 163);
+	color: green;
+	font-family: 'Jost', sans-serif;
+}
