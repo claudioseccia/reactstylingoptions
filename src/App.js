@@ -9,11 +9,18 @@ import './App.scss';
 import { createUseStyles } from 'react-jss';
 import theme from './theme';
 
+//EMOTION JSS
+import { css, cx } from '@emotion/css';
+
 const useStyles = createUseStyles((theme) => ({
 	baseStyles: {
 		fontWeight: ({ fontWeight }) => `${fontWeight === 'bold' ? 'bold' : 'normal'}`,
 		color: ({ statusColor, statusColorCodes }) => statusColorCodes[statusColor],
-		textShadow: '1px 1px 6px rgb(163, 163, 163)'
+		textShadow: '1px 1px 6px rgb(163, 163, 163)',
+		padding: 32,
+		backgroundColor: '#dddddd',
+		fontSize: 24,
+		borderRadius: 4
 	}
 }));
 
@@ -38,11 +45,13 @@ const DummyComp = ({ statusColor = 'primary', fontWeight = 'normal' }) => {
 };
 
 function App() {
+	const color = 'white';
 	return (
 		<div className="App">
-			<h2>
+			<h1>
 				Main styling components options:<br />
-			</h2>
+			</h1>
+			<hr />
 			<ul>
 				<li>
 					<b>CSS modules</b>: natively supported, it is the simplest, less flexible way to integrate styles on
@@ -69,12 +78,33 @@ function App() {
 				<li>JS in CSS: Option 3 - Emotion (https://www.npmjs.com/package/@emotion/css) MIT license</li>
 			</ul>
 			<hr />
-			<h1>Some examples</h1>
+			<h1>SAMPLES</h1>
+			<hr />
+			<h3>CSS modules:</h3>
 			<p className="css-modules">
 				CSS modules: style is inside a simple css with no preprocessor. Easy to use css but no SASS power
 			</p>
+			<hr />
+			<h3>SASS example:</h3>
 			<p className="node-sass">SASS: style is defined with a SASS preprocessor. Full SCSS power</p>
+			<hr />
+			<h3>JSS example:</h3>
 			<DummyComp />
+			<hr />
+			<h3>Emotion / Styled component programming style:</h3>
+			<div
+				className={css`
+					padding: 32px;
+					background-color: hotpink;
+					font-size: 24px;
+					border-radius: 4px;
+					&:hover {
+						color: ${color};
+					}
+				`}
+			>
+				Hover to change color. Emotion JSS
+			</div>
 		</div>
 	);
 }
